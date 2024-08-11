@@ -12,6 +12,7 @@ import { NotFound } from "./NotFound.jsx";
 import { Layout } from "./Layout.jsx";
 import Navbaruser from "../components/Navbaruser.jsx";
 import {AdminTicketPage} from "../pages/admin/AdminTicketPage.jsx"
+import NavbarAdmin from "../pages/admin/components/NavbarAdmin.jsx";
 export const Router = () => (
 
   <Routes>
@@ -31,7 +32,7 @@ export const Router = () => (
       element={
         // What will be rendered
         <Layout>
-          <Navbaruser/>
+          <NavbarAdmin/>
           <AdminTicketPage/>
         </Layout>
       }

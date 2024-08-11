@@ -10,38 +10,75 @@ export const AdminTicketPage = () => {
             <div className="text-5xl font-bold text-primary-base">
                 ปัญหาที่พบ
             </div>
-            <div className="w-full lg:w-[57rem] space-y-5">
+            <div className="w-[642px] lg:w-[57rem] space-y-5">
                 <Searchbar />
-                <div className="flex justify-between space-x-4">
+            </div>
+            <div className="flex space-x-2">
+                <div className="w-[300px]">
                     <FilterStatus />
-                   <FilterTime/>
+                </div>
+                <div className="w-[300px]">
+                    <FilterTime />
                 </div>
             </div>
-            <div className="w-full overflow-visible">
-                <table className="table-auto w-full ">
-                    <thead className="bg-gray-50 border-b-2 border-gray-200">
-                        <tr className="bg-white justify-start items-center gap-2 font-bold">
-                            <th >คำ</th>
-                            <th >หมวดหมู่</th>
-                            <th >ชนิดของคำ</th>
-                            <th >รายละเอียด</th>
-                            <th >สถานะ</th>
-                            <th >วันที่</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr className="border px-4 py-2 font-normal">
-                            <th>หมูปิ้ง</th>
-                            <th>อาหารคาว</th>
-                            <th>คำนาม</th>
-                            <th>นิ้วโป้งกลืนลงไปกับมือ</th>
-                            <th >
-                                <SelectStatus/>
-                            </th> 
-                            <th> 2/7/2567</th>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <div className="w-[1311px] h-[658px] justify-start items-start inline-flex">
+                <div className="w-full">
+                    <table className="w-full border-collapse">
+                        <thead>
+                            <tr className="bg-gray-50 border-b-2 border-gray-200">
+                                <th className="px-4 py-2 text-center">คำ</th>
+                                <th className="px-4 py-2 text-center">หมวดหมู่</th>
+                                <th className="px-4 py-2 text-center">ชนิดของคำ</th>
+                                <th className="px-4 py-2 text-center">รายละเอียด</th>
+                                <th className="px-4 py-2 text-center">สถานะ</th>
+                                <th className="px-4 py-2 text-center">วันที่</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="border-b">
+                                <td className="px-4 py-2 text-center">อ</td>
+                                <td className="px-4 py-2 text-center">อาหารคาว</td>
+                                <td className="px-4 py-2 text-center">คำนาม</td>
+                                <td className="px-4 py-2 text-center">นิ้วโป้งกลืนลงไปกับมือ</td>
+                                <td className="px-4 py-2 w-40">
+                                    <div className="flex justify-center">
+                                        <SelectStatus />
+                                    </div>
+                                </td>
+                                <td className="px-4 py-2 text-center">5/8/2567</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr className="border-b">
+                                <td className="px-4 py-2 text-center">ปลาช่อน</td>
+                                <td className="px-4 py-2 text-center">สัตว์น้ำ</td>
+                                <td className="px-4 py-2 text-center">คำนาม</td>
+                                <td className="px-4 py-2 text-center">โมเดลโชว์รูปร่างแปลก</td>
+                                <td className="px-4 py-2 w-40">
+                                    <div className="flex justify-center">
+                                        <SelectStatus />
+                                    </div>
+                                </td>
+                                <td className="px-4 py-2 text-center">2/8/2567</td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr className="border-b">
+                                <td className="px-4 py-2 text-center">กุ้ง</td>
+                                <td className="px-4 py-2 text-center">อาหารคาว</td>
+                                <td className="px-4 py-2 text-center">คำนาม</td>
+                                <td className="px-4 py-2 text-center">พื้นที่ที่ผมอยู่ไม้ได้ใช้ท่านี้ครับ แจ้งจากชุมชน</td>
+                                <td className="px-4 py-2 w-40">
+                                    <div className="flex justify-center">
+                                        <SelectStatus />
+                                    </div>
+                                </td>
+                                <td className="px-4 py-2 text-center">1/8/2567</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

@@ -3,17 +3,15 @@ import { Listbox, Transition } from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 
 const statuses = [
-  {id: 1, name: 'ได้รับคำร้อง'},
-  {id: 2, name: 'ตรวจสอบคำร้อง'},
-  {id: 3, name: 'กำลังแก้ไข'},
-  {id: 4, name: 'แก้ไขเสร็จสิ้น'},
+  {id: 1, name: 'ใหม่สุด'},
+  {id: 2, name: 'เก่าสุด'},
 ]
 
 export default function FilterStatus() {
   const [selected, setSelected] = useState(statuses[0])
 
   return (
-    <div className="w-full">
+    <div className="w-[300px]">
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative">
           <Listbox.Button className="h-14 w-full px-3 rounded border border-black/25 text-left relative">
@@ -28,7 +26,7 @@ export default function FilterStatus() {
             </span>
           </Listbox.Button>
           <Listbox.Label className="absolute -top-2 left-3 px-1 bg-white text-black/60 text-xs font-normal font-['Roboto'] leading-3 tracking-tight">
-            สถานะ
+            ช่วงเวลา
           </Listbox.Label>
           <Transition
             as={Fragment}
@@ -36,13 +34,14 @@ export default function FilterStatus() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+            <Listbox.Options
+              className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-50"
+            >
               {statuses.map((status) => (
                 <Listbox.Option
                   key={status.id}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
                     }`
                   }
                   value={status}
@@ -50,9 +49,8 @@ export default function FilterStatus() {
                   {({ selected }) => (
                     <>
                       <span
-                        className={`block truncate ${
-                          selected ? 'font-medium' : 'font-normal'
-                        }`}
+                        className={`block truncate ${selected ? 'font-medium' : 'font-normal'
+                          }`}
                       >
                         {status.name}
                       </span>
@@ -66,9 +64,11 @@ export default function FilterStatus() {
                 </Listbox.Option>
               ))}
             </Listbox.Options>
+
           </Transition>
         </div>
       </Listbox>
     </div>
   )
+  
 }
